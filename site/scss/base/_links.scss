@@ -1,0 +1,13 @@
+//------------------------------------*\
+//    $LINKS
+//------------------------------------*/
+
+a { 
+  text-decoration: none; 
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+a:focus {
+	outline: none;
+}

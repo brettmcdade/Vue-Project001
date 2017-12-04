@@ -1,0 +1,33 @@
+.pdp {
+
+	&__details {
+		padding-left: 130px;
+		max-width: 510px;
+	}
+
+	&__title,
+	&__price {
+		font-size: 44px;
+		font-weight: 700;
+	}
+
+	&__header {
+		margin-bottom: 40px;
+		margin-top: 100px;
+	}
+
+	&__desc {
+		font-size: 14px;
+		line-height: 21px;
+		margin-bottom: 40px;
+	}
+
+	&__inputs {
+		display: flex;
+		margin-bottom: 30px;
+
+		& > div:first-child {
+			margin-right: 30px;
+		}
+	}
+}

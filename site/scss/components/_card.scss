@@ -1,0 +1,70 @@
+body {
+	background-color: #000;
+}
+
+.card {
+
+	&__title {
+		background-color: #42A5F5;
+		color: #000000;
+		font-size: 40px;
+		font-weight: 700;
+		margin-bottom: 70px;
+		padding: 30px 50px;
+		text-transform: uppercase;
+	}
+
+	&__options {
+		margin: 0 0 60px;
+		padding: 0;
+		list-style: upper-alpha;
+    	list-style-position: inside;
+
+		li {
+			color: #42A5F5;
+			font-size: 40px;
+			font-weight: 600;
+			margin-bottom: 30px;
+			cursor: pointer;
+			padding: 0 50px;
+			text-transform: uppercase;
+
+				&:hover {
+					color: #999;
+				}
+		}
+	}
+}
+
+
+
+.score {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #000;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	padding: 15px;
+}
+
+.feedback {
+	background-color: #ccc;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	left: 0;
+	text-align: center;
+	padding: 15px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	transition: visibility .1s;
+	visibility: hidden;
+
+		&.active {
+			visibility: visible;
+		}
+}

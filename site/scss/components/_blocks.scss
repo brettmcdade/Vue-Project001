@@ -1,0 +1,120 @@
+/* -----------------------------------------
+  Default Styling
+----------------------------------------- */
+
+	/* -----------------------------------------
+		Block Intro
+	----------------------------------------- */
+	.b-intro {
+		text-align: center;
+	  margin-bottom: 2em;
+	}
+
+	.b-intro .b-title {
+
+	}
+
+	.b-intro p {
+
+	}
+
+
+	/* -----------------------------------------
+		Block Thumb
+	----------------------------------------- */
+	.b-thumb {
+		display: inline-block;
+	}
+
+	.b-thumb .b-title {
+		margin-top: 1em;
+	  text-transform: uppercase;
+	  text-align: center;
+	}
+
+
+	/* -----------------------------------------
+		Block Inset
+	----------------------------------------- */
+	.b-inset {
+		position: relative;
+		display: inline-block;
+	
+		.b-text {
+		  position: absolute;
+		  left: 0;
+		  right: 0;
+		  top: 50%;
+		  transform: translateY(-50%);
+		  text-align: center;
+		}
+
+		.b-title {
+			color: #FEFEFE;
+			font-size: 44px;
+			line-height: 1;
+			margin-bottom: 30px;
+			text-transform: none;
+		}
+
+	}
+
+
+	/* -----------------------------------------
+		Block Section
+	----------------------------------------- */
+	.b-section {
+		padding: 150px 0 130px;
+
+			.b-title {
+				margin-bottom: 50px;
+				text-align: center;
+			}
+	}
+
+
+	.b-section--bottom {
+		padding-bottom: 130px;
+	}
+
+
+	.b-title {
+		font-size: 24px;
+		font-weight: 700;
+		letter-spacing: .05em;
+		text-transform: uppercase;
+	}
+
+/* -----------------------------------------
+  End Default Styling
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+	Your Custom Styling
+----------------------------------------- */
+
+
+
+.b-title--page-title {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+
+/* Block Thumb */
+.b-thumb .b-title {
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 1;
+}
+
+
+
+
+.b-inset img {
+	//max-width: 358px;
+}
+

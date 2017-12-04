@@ -1,0 +1,33 @@
+include "_includes/header.html"
+
+	<div id="app">
+		<questions></questions>
+	</div>
+
+	<template id="questions-template">
+		<div>
+
+			<div class="feedback" v-bind:class="{ active: showFeedback }">
+				<span v-if="isCorrect">You are correct!</span>
+				<span v-else>You are incorrect</span>
+			</div>
+
+			<div class="score">{{score}} pts</div>
+
+		    <div class="card">
+		    	<div class="card__title" v-html="question"></div>
+		    	<ol class="card__options">
+		    		<li v-for="choice in choices" 
+		    			v-on:click="selectChoice" 
+		    			v-html="choice">
+		    		</li>
+		    	</ol>
+		    </div>
+		    
+		</div>
+    </template>
+
+
+include "_includes/footer.html"
+
+

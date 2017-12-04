@@ -1,0 +1,139 @@
+
+
+// The default font-size is set to 100% of the browser style sheet (usually 16px)
+// for compatibility with brower-based text zoom or user-set defaults.
+
+// Since the typical default browser font-size is 16px, that makes the calculation for grid size.
+// If you want your base font-size to be different and not have it effect the grid breakpoints,
+// set $em-base to $base-font-size and make sure $base-font-size is a px value.
+$base-font-size: 100% !default;
+
+// $base-line-height is 24px while $base-font-size is 16px
+$base-line-height: 150% !default;
+
+// This is the default html and body font-size for the base em value.
+$em-base: 16px !default;
+
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// New Syntax, allows to optionally calculate on a different base value to counter compounding effect of em's.
+// Call with 1, 2, 3 or 4 parameters, 'px' is not required but supported
+// em-calc(10 20 30px 40);
+// Space delimited, if you want to delimit using comma's, wrap it in another pair of brackets
+// em-calc((10, 20, 30, 40px));
+// Optionally call with a different base (eg: 8px) to calculate em.
+// em-calc(16px 32px 48px, 8px);
+// If you require to comma separate your list
+// em-calc((16px, 32px, 48), 8px);
+
+@function convert-to-em($value, $base-value: $em-base)  {
+  $value: strip-unit($value) / strip-unit($base-value) * 1em;
+  @if ($value == 0em) { $value: 0; } // Turn 0em into 0
+  @return $value;
+}
+
+@function em-calc($values, $base-value: $em-base) {
+  $max: length($values);
+
+  @if $max == 1 { @return convert-to-em(nth($values, 1), $base-value); }
+
+  $emValues: ();
+  @for $i from 1 through $max {
+    $emValues: append($emValues, convert-to-em(nth($values, $i), $base-value));
+  }
+  @return $emValues;
+}
+
+// Support for the old syntax
+
+@function emCalc($values){
+  @return em-calc($values);
+}
+
+
+//
+// Layout Variables
+
+$fix-mqs: false !default;
+
+@mixin respond-min($width) {
+    // If we're outputting for a fixed media query set...
+    @if $fix-mqs {
+        // ...and if we should apply these rules...
+        @if $fix-mqs >= $width {
+            // ...output the content the user gave us.
+            @content;
+        }
+    }
+    @else {
+        // Otherwise, output it using a regular media query
+        @media screen and (min-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin respond-max($width) {
+    // If we're outputting for a fixed media query set...
+    @if $fix-mqs {
+        // ...and if we should apply these rules...
+        @if $fix-mqs >= $width {
+            // ...output the content the user gave us.
+            @content;
+        }
+    }
+    @else {
+        // Otherwise, output it using a regular media query
+        @media screen and (max-width: $width) {
+            @content;
+        }
+    }
+}
+
+
+$old-ie: false !default;
+
+@mixin old-ie {
+    // Only use this content if we're dealing with old IE
+    @if $old-ie {
+        @content;
+    }
+}
+
+
+
+
+$bp-siteMaxWidth: emCalc(1260);
+$bp-small: emCalc(480);
+$bp-smallish: emCalc(640);
+$bp-medium: emCalc(768);
+$bp-large: emCalc(960);
+
+// $screen: "only screen";
+$small: "only screen and (min-width: #{$bp-small})";
+$smallish: "only screen and (min-width: #{$bp-smallish})";
+$medium: "only screen and (min-width: #{$bp-medium})";
+$large: "only screen and (min-width: #{$bp-large})";
+$landscape: "only screen and (orientation: landscape)";
+$portrait: "only screen and (orientation: portrait)";
+
+
+//
+// Grid Variables
+
+$container-width: $bp-siteMaxWidth;
+$column-gutter: emCalc(15);
+$column-gutter-small: emCalc(25);
+$column-gutter-medium: emCalc(32);
+
+// Font 
+$global-font-family: 'Roboto', sans-serif;
+$headings-font: 'Roboto', sans-serif;
+
+// Colors
+$color-black: #000;
+$money-green: #88cf5d;
+

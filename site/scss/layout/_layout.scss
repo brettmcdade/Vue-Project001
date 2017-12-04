@@ -1,0 +1,133 @@
+//
+// Grid Variables
+
+/*
+.l-pagewrap {
+	background-color: #fff;
+	margin: 0 auto;
+	min-width: $unit-width;
+	width: 100%;
+}
+*/
+
+.l-pagewrap {
+	@include old-ie {
+		width: $unit-width;
+	}
+}
+
+
+.l-container {
+	margin: 0 auto;
+	padding: 0 $column-gutter;
+	width: 100%;
+	max-width: $container-width;
+}
+
+.l-main {
+	padding-top: 80px;
+	padding-bottom: 130px;
+
+	&--pdp {
+		background-color: #ededed;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+
+// Layout 2 Column
+.l-col1of2 {
+	@include respond-min($bp-medium) {
+		float: left;
+		width: 66%;
+	}
+}
+.l-col2of2 {
+	@include respond-min($bp-medium) {
+		float: right;
+		width: 34%;
+	}
+}
+
+.l-aside {
+	@include respond-min($bp-medium) {
+	  padding-left: 80px;
+	}
+}
+
+
+
+
+// Grid
+.grid {
+	margin: 0 (-$column-gutter) 1em (-$column-gutter);
+}
+
+.grid__column {
+	padding: 0 $column-gutter;
+
+		@include respond-min($bp-large) {
+			float: left;
+		}
+}
+
+		.grid--1to2 > .grid__column {
+			@include respond-min($bp-large) {
+				width: 50%;
+			}
+		}
+
+		.grid--1to3 > .grid__column {
+			@include respond-min($bp-large) {
+				width: 33.3333333%;
+			}
+		}
+
+		.grid--1to4 > .grid__column {
+			@include respond-min($bp-large) {
+				width: 25%;
+			}
+		}
+
+		.grid--1to6 > .grid__column {
+			@include respond-min($bp-large) {
+				width: 16.66666666666667%;
+			}
+		}
+
+		.grid--1to2 > .grid__column:nth-of-type(2n+1),
+		.grid--1to3 > .grid__column:nth-of-type(3n+1),
+		.grid--1to4 > .grid__column:nth-of-type(4n+1),
+		.grid--1to6 > .grid__column:nth-of-type(6n+1) {
+			clear: left;
+		}		
+
+.l-header:after,
+.l-main:after,
+.l-footer:after,
+.l-section:after,
+.grid:after,
+.l-aside:after,
+.l-container:after {
+	clear: both;
+}
+
+.l-section:before,	
+.grid:before,
+.l-section:after,
+.grid:after,
+.l-header:before,
+.l-header:after,
+.l-main:before,
+.l-main:after,
+.l-footer:before,
+.l-footer:after,
+.l-aside:before,
+.l-aside:after,
+.l-container:before,
+.l-container:after  {
+	content: "";
+	display: table;
+}
+

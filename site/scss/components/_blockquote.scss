@@ -1,0 +1,16 @@
+blockquote {
+  margin: 0 0 30px 40px;
+  padding: 0 20px 0 20px;
+  border-left: 1px solid #DDD;
+}
+
+blockquote cite {
+  display: block;
+  font-size: .75em;
+  color: #555;
+  font-style: italic;
+}
+
+blockquote cite:before {
+  content: "\2014 \0020";
+}

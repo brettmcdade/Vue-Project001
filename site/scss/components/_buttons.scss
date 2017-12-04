@@ -1,0 +1,91 @@
+//------------------------------------*\
+//    $BUTTONS
+//------------------------------------*/
+
+.button {
+  display: inline-block;
+  padding: 15px 50px;
+  color: #000;
+  background-color: #444;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-transform: uppercase;
+}
+
+  .button:hover,
+  .button:focus {
+    color: #fff;
+    background-color: #555;
+  }
+
+  .button:active,
+  .button.active {
+    outline: none;
+  }
+
+
+
+
+/* Alternative Button */
+.button--alt {
+  background-color: #bababa;
+  color: #444;
+}
+
+  .button--alt:hover,
+  .button--alt:focus {
+    background-color: #444;
+  }
+
+ 
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.button--text {
+  color: #444;
+}
+
+  .button--text:hover {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+
+
+/* Disabled Button */
+.button--disabled,
+.button--disabled:hover,
+.button[disabled],  
+fieldset[disabled] {
+  cursor: default !important;
+  background-color: #eaeaea !important; 
+  color: #444; 
+}
+
+
+.button--full-width {
+  width: 100%;
+  //max-width: 300px;
+}
+
+.button--form {
+  margin-top: 1em;
+}
+
+
+
+
+.b-inset .button {
+  background-color: #fff;
+}

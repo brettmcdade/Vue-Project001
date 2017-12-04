@@ -1,0 +1,1 @@
+{"version":3,"sources":["site/js/test.js"],"names":["map","n","bab"],"mappings":";;AAAA,CAAC,CAAD,EAAG,CAAH,EAAK,CAAL,EAAQA,GAAR,CAAY;AAAA,SAAKC,IAAI,CAAT;AAAA,CAAZ,EAAwBC","file":"src","sourcesContent":["[1,2,3].map(n => n + 1);bab"]}

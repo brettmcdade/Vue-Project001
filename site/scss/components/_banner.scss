@@ -1,0 +1,108 @@
+/* -----------------------------------------
+  Default Styling
+----------------------------------------- */
+
+.banner {
+  position: relative;
+  width: 100%;
+  background-color: #eaeaea;
+  background-repeat: no-repeat;
+	background-position: 50% 0;
+  background-size: cover;
+    /*
+    &:before {
+      content: '';
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      background-blend-mode: color;
+      background: linear-gradient(to bottom, #43af02 0%,#fdcbcb 100%);
+      opacity: .4;
+    }
+    */
+    @include respond-min($bp-medium) {
+      background-image: url('../../images/jumbotron.png');
+      height: 589px;
+    }
+}
+
+.banner .b-title {
+  font-size: 44px;
+  line-height: 1;
+    @include respond-min($bp-medium) {
+      font-size: 64px;
+    }
+}
+
+.banner--xl {
+  height: 485px;
+  @include respond-min($bp-medium) {
+    height: 560px;
+  }
+}
+
+.banner .b-text {
+  padding: 2em 3em;
+}
+
+.banner p {
+  margin: 1em 0 0;
+}
+
+/* -----------------------------------------
+  End Default Styling
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+  Customizations
+----------------------------------------- */
+
+.banner {
+  //width: 1260px;
+}
+.banner .b-text {
+  color: #fff;
+  padding: 110px 20px 0;
+    @include respond-min($bp-large) {
+      padding: 144px 95px 0;
+    }
+}
+
+.banner .b-subtitle {
+  letter-spacing: .06em;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.banner--xl .b-title {
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 50px;
+  @include respond-min($bp-large) {
+    font-size: 82px;
+    line-height: 67px;
+  }
+}
+
+.banner--xl p {
+  font-size: 22px;
+  line-height: 24px;
+    @include respond-min($bp-large) {
+      font-size: 34px;
+      line-height: 1;
+    }  
+}
+
+.banner--xl p + .btn {
+  margin-top: 37px;
+}
+
+.banner--xl .btn {
+  box-shadow: 4.2px 4.2px 0 rgba(0, 0, 0, 0.3);
+}
